@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/index.css">
     <title>Cronômetro</title>
 </head>
 <body>
+    <div id="tempo">00:00:000</div>
+
+    <div id="botoes">
+        <div class="iniciar" onclick="iniciar()">Iniciar</div>
+        <div class="iniciar retomar" style="display: none;" onclick="retomar()">Retomar</div>
+        <div id="parar" style="display: none;" onclick="pausar()">Pausar</div>
+        <div id="zerar" style="display: none;" onclick="zerar()">Zerar</div>
+    </div>
     
+    <script src="./assets/scripts/index.js"></script>
 </body>
 </html>
