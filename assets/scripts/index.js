@@ -11,25 +11,36 @@ function iniciar() {
     document.querySelector('#parar').style.display = 'block'
     document.querySelector('#zerar').style.display = 'block'
 
-    timer = setInterval(() => {
-        tempo.milesimos++
-        VerificarTempo()
-        exibirTempo()
-    }, 1)
+    loop()
 }
 
 function pausar() {
     document.querySelector('#parar').style.display = 'none'
     document.querySelector('.retomar').style.display = 'block'
+
+    clearInterval(timer)
 }
 
 function retomar() {
     document.querySelector('.retomar').style.display = 'none'
     document.querySelector('#parar').style.display = 'block'
+
+    loop()
 }
 
 function zerar() {
-    location.reload()
+    tempo.milesimos = 0
+    tempo.segundos = 0
+    tempo.minutos = 0
+    tempo.horas = 0
+
+    document.querySelector('.iniciar').style.display = 'block'
+    document.querySelector('.retomar').style.display = 'none'
+    document.querySelector('#parar').style.display = 'none'
+    document.querySelector('#zerar').style.display = 'none'
+
+    clearInterval(timer)
+    exibirTempo()
 }
 
 
@@ -47,4 +58,12 @@ function exibirTempo() {
     `${tempo.horas}:${tempo.minutos}:${tempo.segundos}:${tempo.milesimos}`
 
     console.log(`${tempo.horas}:${tempo.minutos}:${tempo.segundos}:${tempo.milesimos}`)
+}
+
+function loop() {
+    timer = setInterval(() => {
+        tempo.milesimos++
+        VerificarTempo()
+        exibirTempo()
+    }, .001)
 }
