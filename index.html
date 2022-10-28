@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style/index.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Cronômetro</title>
 </head>
 <body>
-    <div id="tempo">00:00:000</div>
-
-    <div id="botoes">
-        <div class="iniciar" onclick="iniciar()">Iniciar</div>
-        <div class="iniciar retomar" style="display: none;" onclick="retomar()">Retomar</div>
-        <div id="parar" style="display: none;" onclick="pausar()">Pausar</div>
-        <div id="zerar" style="display: none;" onclick="zerar()">Zerar</div>
-    </div>
     
-    <script src="./assets/scripts/index.js"></script>
+    <div class="cronometro-container">
+        <div class="time-container">
+            <span data-time >00:00:00</span>
+        </div>
+        <div class="buttons-container">
+            <button data-start="start">Iniciar</button>
+            <button data-pause disabled>Pausar</button>
+            <button data-stop disabled>Parar</button>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>
